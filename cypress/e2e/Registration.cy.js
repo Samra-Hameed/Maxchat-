@@ -1,0 +1,18 @@
+describe('Registration', () => {
+    it('Register into application', () => {
+      cy.visit('https://parabank.parasoft.com/parabank/index.htm;jsessionid=C5E3446CF213D38D4E9FA55C672C79B6')
+      cy.get('#loginPanel > :nth-child(3) > a').click()
+      cy.get("input[id='customer.firstName']").type('Max')
+      cy.get("input[id='customer.lastName']").type('Remind')
+      cy.get("input[id='customer.address.street']").type('XYZ')
+      cy.get("input[id='customer.address.city']").type('Florida')
+      cy.get("input[id='customer.address.state']").type('VIC')
+      cy.get("input[id='customer.address.zipCode']").type('974025')
+      cy.get("input[id='customer.phoneNumber']").type('65824962985')
+      cy.get("input[id='customer.ssn']").type('1001')
+      cy.get("input[id='customer.username']").type('Maxtest')
+      cy.get("input[id='customer.password']").type('Maxremind123')
+      cy.get("#repeatedPassword").type('Maxremind123')
+      cy.get('[colspan="2"] > .button').click()
+    })
+  })
